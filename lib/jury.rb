@@ -1,21 +1,24 @@
 class Jury
 
-  attr_reader :jury_members
+  attr_reader :members
 
   def initialize
-    @jury_members = Array.new
-  end
-
-  def add_member(member)
-    @jury_members << member
+    @members = []
+    @finalists = {}
   end
 
   def members
-    @jury_members
+    @members
+  end
+
+  def add_member(member)
+    @members << member
   end
 
   def cast_votes(finalists)
-
+    finalistshash = {}
+    
+    return finalistshash
   end
 
 end

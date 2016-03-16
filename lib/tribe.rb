@@ -6,22 +6,18 @@ class Tribe
     @members = options[:members]
     @immune = options[:immune]
     puts "#{@name} is created"
- end
+  end
 
  def to_s
      @name
  end
 
-
-def tribal_council(immune)
-
+ def tribal_council(options)
   @members.each_with_index do |member, i|
-    if member != immune
+    if member != options[:immune]
       return @members.delete_at(i)
     end
   end
-  
-end
-
+ end
 
 end

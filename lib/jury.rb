@@ -35,11 +35,8 @@ class Jury
   end
 
   def announce_winner(final_votes)
-    winner = final_votes.values.sort.first
-    puts winner
-
+    winner = final_votes.max_by { |_, vote| vote }.first
   end
-
 
 
 end

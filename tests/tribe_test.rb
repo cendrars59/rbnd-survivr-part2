@@ -52,5 +52,5 @@ class TestTribe < Minitest::Test
      immune = @coyopa.members.first
      assert_instance_of Contestant, @coyopa.tribal_council(immune: immune)
   end
-  
+
 end

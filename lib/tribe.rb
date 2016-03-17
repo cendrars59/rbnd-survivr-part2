@@ -13,11 +13,16 @@ class Tribe
  end
 
  def tribal_council(options)
+  new_members = []
   @members.each_with_index do |member, i|
     if member != options[:immune]
       return @members.delete_at(i)
     end
   end
+ end
+
+ def include?
+   @members
  end
 
 end

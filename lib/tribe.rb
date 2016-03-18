@@ -1,28 +1,21 @@
 class Tribe
-  attr_accessor :name, :members, :immune
+  attr_accessor :name, :members
 
   def initialize(options)
     @name = options[:name]
     @members = options[:members]
-    @immune = options[:immune]
-    puts "#{@name} is created"
+    puts @members
   end
 
  def to_s
-     @name
+  @name
  end
 
  def tribal_council(options)
-  new_members = []
-  @members.each_with_index do |member, i|
-    if member != options[:immune]
-      return @members.delete_at(i)
+    unlucky_guy = @members.sample
+    while unlucky_guy == options[:immune]
+      unlucky_guy = @members.sample
     end
-  end
+    unlucky_guy
  end
-
- def include?
-   @members
- end
-
 end

@@ -15,7 +15,6 @@ class Jury
   end
 
   def cast_votes(finalists)
-
     finalists.each do |finalist|
       @finalists[finalist] = 0
     end

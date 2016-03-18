@@ -1,10 +1,10 @@
 class Game
-  attr_reader :tribes
+  attr_accessor :tribes
 
   def initialize(tribe1, tribe2)
     @tribes = []
     @tribes.push tribe1
-    @tribes.push tribe1
+    @tribes.push tribe2
   end
 
   def add_tribe(tribe)
@@ -24,12 +24,11 @@ class Game
     @tribes.each do |tribe|
       members_to_merge.push tribe.members
     end
-    merged_tribe = Tribe.new({ name: name, members: members_to_merge.flatten!})
-    merged_tribe
+    Tribe.new({ name: name, members: members_to_merge.flatten!})
   end
 
-	#def individual_immunity_challenge
-		#@tribes[0].members.sample
-	#end
+	def individual_immunity_challenge
+		@tribes.members.sample
+	end
 
 end

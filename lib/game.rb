@@ -28,7 +28,11 @@ class Game
   end
 
 	def individual_immunity_challenge
-		@tribes.members.sample
+    if immunity_challenge == @tribes[0]
+      return tribes[1].members.sample
+    else
+      return tribes[0].members.sample
+    end
 	end
 
 end
